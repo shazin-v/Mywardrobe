@@ -117,10 +117,9 @@ const Dashboard = () => {
             </ul>
           </div>
         </aside>
-<main className="w-full h-full">
-
-        <Outlet />
-</main>
+        <main className="w-full h-full">
+          <Outlet />
+        </main>
       </div>
     </>
   );

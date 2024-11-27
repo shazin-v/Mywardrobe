@@ -22,7 +22,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Pagination from "./Pagination";
 import { useNavigate } from "react-router-dom";
-import { filters, products, sortOptions } from "../helpers/productFilter";
+import { filters, sortOptions } from "../helpers/productFilter";
 import SummaryApi from "../common/route";
 
 const Products = () => {
@@ -31,10 +31,8 @@ const Products = () => {
   }
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
   const navigate = useNavigate();
 
-  // api
   const [allProduct, setAllProduct] = useState([]);
   const fetchAllProduct = async () => {
     const response = await fetch(SummaryApi.allProduct.url);
@@ -60,7 +58,6 @@ const Products = () => {
               transition
               className="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
             />
-
             <div className="fixed inset-0 z-40 flex">
               <DialogPanel
                 transition
@@ -295,14 +292,13 @@ const Products = () => {
                       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {allProduct?.map((product) => (
                           <div
-                            key={product._id || product.id} // Ensure a unique key is provided
+                            key={product._id || product.id}
                             className="group relative"
                             onClick={() => navigate(`/product/${product._id}`)}
                           >
                             <img
-                           
                               alt={product?.brandName}
-                              src={ product?.productImage[0]}
+                              src={product?.productImage[0]}
                               className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
                             />
                             <div className="mt-4 flex justify-between">

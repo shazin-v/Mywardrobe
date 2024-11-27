@@ -40,13 +40,10 @@ const Navbar = () => {
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          {/* Logo */}
           <Link to={"/"} className="text-xl font-bold text-blue-700">
             MyWardRobe
           </Link>
-
           {/* Right-side icons and buttons */}
-
           <div className="flex md:order-2">
             <div className="relative mr-5">
               {user?._id && (
@@ -118,7 +115,6 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="w-full md:hidden">
@@ -159,7 +155,6 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-
           {/* Desktop Menu */}
           <div
             className={`items-center justify-between hidden w-full md:flex md:w-auto`}

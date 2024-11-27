@@ -20,10 +20,10 @@ const Contact = () => {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            Contact sales
+            Contact Us
           </h2>
           <p className="mt-2 text-lg/8 text-gray-600">
-            Aute magna irure deserunt veniam aliqua magna enim voluptate.
+            lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
         <form

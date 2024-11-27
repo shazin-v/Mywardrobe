@@ -1,6 +1,5 @@
 const backendDomain = process.env.REACT_APP_BACKEND_DOMAIN;
-console.log(backendDomain); // Logs the value of REACT_APP_BACKEND_DOMAIN or the default
-
+console.log(backendDomain);
 
 const SummaryApi = {
   signUp: {
@@ -30,7 +29,6 @@ const SummaryApi = {
     url: `${backendDomain}/addtocart`,
     method: "post",
   },
-
   addToCartProductCount: {
     url: `${backendDomain}/countAddToCartProduct`,
     method: "get",
@@ -47,7 +45,6 @@ const SummaryApi = {
     url: `${backendDomain}/delete-cart-product`,
     method: "post",
   },
-
   // admin
   allUser: {
     url: `${backendDomain}/all-user`,
@@ -57,7 +54,6 @@ const SummaryApi = {
     url: `${backendDomain}/upload-product`,
     method: "post",
   },
-
   updateProduct: {
     url: `${backendDomain}/update-product`,
     method: "post",
@@ -70,20 +66,18 @@ const SummaryApi = {
     url: `${backendDomain}/category-product`,
     method: "post",
   },
-
-  // save
-  saveOrder: {
-    url: `${backendDomain}/save-order`,
-    method: "post",
-  },
   getOrder: {
     url: `${backendDomain}/order-list`,
     method: "get",
   },
-
   allOrder: {
     url: `${backendDomain}/all-order`,
     method: "get",
+  },
+  // save
+  saveOrder: {
+    url: `${backendDomain}/save-order`,
+    method: "post",
   },
 };
 

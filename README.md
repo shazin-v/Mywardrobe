@@ -45,6 +45,7 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 ```
+
 ---
 
 # Run the Application
@@ -98,8 +99,8 @@ The front-end will interact with the back-end APIs running on http://localhost:5
 - API routes for products, orders, and users.
 
 # TODO:
+
 - Implement payment gateway integration.
 - Integrate searching features
 - Impliment category search
 - Implement user profile management
-

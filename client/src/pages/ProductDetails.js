@@ -8,7 +8,7 @@ import addToCart from "../helpers/addToCart";
 const ProductDetails = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-  
+
   const { fetchUserAddToCart } = useContext(Context);
 
   const [data, setData] = useState({
@@ -27,7 +27,6 @@ const ProductDetails = () => {
   const productImageListLoading = new Array(4).fill(null);
 
   const fetchProductDetails = async () => {
-
     try {
       const response = await fetch(
         `${SummaryApi.productDetails.url}/${params.id}`
@@ -59,7 +58,6 @@ const ProductDetails = () => {
     <div className="bg-white">
       <div className="pt-6">
         {/* Breadcrumb */}
-
         <nav aria-label="Breadcrumb">
           <ol
             role="list"
@@ -70,83 +68,54 @@ const ProductDetails = () => {
                 aria-current="page"
                 className="font-medium text-gray-500 hover:text-gray-600"
               >
-                {data?.category} 
+                {data?.category}
               </span>
             </li>
           </ol>
         </nav>
-            
+
         {/* Image gallery */}
-        {/* <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           {data?.productImage.length > 0 ? (
-            data?.productImage.map((image, index) => (
-              <img
-                key={index}
-                alt={`Product ${index + 1}`}
-                src={image}
-                className="aspect-[4/5] size-full object-cover sm:rounded-lg lg:aspect-[3/4]"
-              />
-            ))
+            <>
+              {data.productImage[0] && (
+                <img
+                  alt={`Image-1`}
+                  src={data.productImage[0]}
+                  className="hidden aspect-[3/4] size-full rounded-lg object-cover lg:block"
+                />
+              )}
+
+              <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+                {data?.productImage[1] && (
+                  <img
+                    alt={`Image-2`}
+                    src={data.productImage[1]}
+                    className="aspect-[3/2] size-full rounded-lg object-cover"
+                  />
+                )}
+                {data?.productImage[2] && (
+                  <img
+                    alt={`Image-3`}
+                    src={data.productImage[2]}
+                    className="aspect-[3/2] size-full rounded-lg object-cover"
+                  />
+                )}
+              </div>
+
+              {data?.productImage[3] && (
+                <img
+                  alt={`Image-4`}
+                  src={data.productImage[3]}
+                  className="aspect-[4/5] size-full object-cover sm:rounded-lg lg:aspect-[3/4]"
+                />
+              )}
+            </>
           ) : (
-            <p>No images available</p>
+            <p className="text-center text-gray-500">No images available</p>
           )}
-        </div> */}
+        </div>
 
-
-
-
-
-{/*  */}
-
-{/* Image gallery */}
-<div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-  {data?.productImage.length > 0 ? (
-    <>
-      {/* First image */}
-      {data.productImage[0] && (
-        <img
-          alt={`Image 1`}
-          src={data.productImage[0]}
-          className="hidden aspect-[3/4] size-full rounded-lg object-cover lg:block"
-        />
-      )}
-
-      {/* Second and third images */}
-      <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-        {data?.productImage[1] && (
-          <img
-            alt={`Image 2`}
-            src={data.productImage[1]}
-            className="aspect-[3/2] size-full rounded-lg object-cover"
-          />
-        )}
-        {data?.productImage[2] && (
-          <img
-            alt={`Image 3`}
-            src={data.productImage[2]}
-            className="aspect-[3/2] size-full rounded-lg object-cover"
-          />
-        )}
-      </div>
-
-      {/* Fourth image */}
-      {data?.productImage[3] && (
-        <img
-          alt={`Image 4`}
-          src={data.productImage[3]}
-          className="aspect-[4/5] size-full object-cover sm:rounded-lg lg:aspect-[3/4]"
-        />
-      )}
-    </>
-  ) : (
-    <p className="text-center text-gray-500">No images available</p>
-  )}
-</div>
-
-
-        {/*  */}
-
-        {/* Product info */}
         <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
@@ -154,7 +123,6 @@ const ProductDetails = () => {
             </h1>
           </div>
 
-          {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="">Product information</h2>
             <p className="text-3xl tracking-tight text-gray-900">
@@ -227,7 +195,6 @@ const ProductDetails = () => {
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-            {/* Description */}
             <h3 className="text-lg font-medium text-gray-900">Description</h3>
             <p className="mt-4 text-base text-gray-600">{data?.description}</p>
           </div>

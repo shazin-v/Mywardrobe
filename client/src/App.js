@@ -20,15 +20,12 @@ function App() {
         method: SummaryApi.current_user.method,
         credentials: "include",
       });
-      // console.log("dataResponse fetchUserDetails", dataResponse);
 
       if (!dataResponse.ok)
         throw new Error("throw new error Failed to fetch user details");
 
       const dataApi = await dataResponse.json();
-      // console.log("dataApi", dataApi);
       if (dataApi.success) {
-        // console.log("Dispatching user details:", dataApi.data);
         dispatch(setUserDetails(dataApi.data));
       } else {
         console.error(
@@ -55,14 +52,11 @@ function App() {
       setCartProductCount(dataApi?.data?.count);
     } catch (error) {
       console.error("Error fetching cart count:", error.message);
-      // setCartProductCount(0); // Fallback to 0 if there's an error
     }
   };
 
   useEffect(() => {
-    /**user Details */
     fetchUserDetails();
-    /**user Details cart product */
     fetchUserAddToCart();
   }, []);
 
@@ -70,16 +64,11 @@ function App() {
     <>
       <Context.Provider
         value={{
-          fetchUserDetails, // user detail fetch
-          cartProductCount, // current user add to cart product count,
-          fetchUserAddToCart,
-        }}
-      >
-        {/* {console.log("Context Value: in app js", {
           fetchUserDetails,
           cartProductCount,
           fetchUserAddToCart,
-        })} */}
+        }}
+      >
         <ToastContainer
           position="bottom-right"
           autoClose={3000}

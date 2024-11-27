@@ -6,7 +6,6 @@ async function healthCheckController(req, res) {
         .json({ message: "Method Not Allowed", error: true, success: false });
     }
 
-    // Return a success response indicating that the server is up
     res.status(200).json({
       status: "Healthy",
       message: "API is up and running!",

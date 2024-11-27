@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SummaryApi from "../common/route";
 import Context from "../context";
 
 const Cart = () => {
-  const [data, setData] = useState([]); // Stores cart data from the API
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   // const [openModal, setOpenModal] = useState(null);
   const context = useContext(Context);
+  const navigate = useNavigate();
 
-  // Fetch cart data
   const fetchData = async () => {
     try {
       const response = await fetch(SummaryApi.addToCartProductView.url, {
@@ -31,7 +31,6 @@ const Cart = () => {
     fetchData().finally(() => setLoading(false));
   }, []);
 
-  // Compute total amount and total items
   const totalAmount = data.reduce(
     (total, item) => total + item.productId.sellingPrice * item.quantity,
     0
@@ -39,7 +38,6 @@ const Cart = () => {
 
   const totalItems = data.reduce((total, item) => total + item.quantity, 0);
 
-  // Increase quantity handler
   const increaseQty = async (id, qty) => {
     try {
       const response = await fetch(SummaryApi.updateCartProduct.url, {
@@ -55,7 +53,6 @@ const Cart = () => {
     }
   };
 
-  // Decrease quantity handler
   const decreaseQty = async (id, qty) => {
     if (qty > 1) {
       try {
@@ -73,7 +70,6 @@ const Cart = () => {
     }
   };
 
-  // Remove product handler
   const deleteCartProduct = async (id) => {
     try {
       const response = await fetch(SummaryApi.deleteCartProduct.url, {
@@ -92,10 +88,7 @@ const Cart = () => {
     }
   };
 
-
-
-
-  // 
+  //
   const handleCheckout = async () => {
     try {
       const response = await fetch(SummaryApi.saveOrder.url, {
@@ -105,10 +98,9 @@ const Cart = () => {
         body: JSON.stringify({ cartItems: data }),
       });
       const responseData = await response.json();
-  
+
       if (responseData.success) {
-        // Redirect to success page or show confirmation
-        window.location.href = "/success";
+        navigate("/success");
       } else {
         alert("Failed to save order: " + responseData.message);
       }
@@ -116,7 +108,7 @@ const Cart = () => {
       console.error("Error during checkout:", error);
     }
   };
-  
+
   return (
     <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl my-5 font-bold tracking-tight text-gray-900">
@@ -139,7 +131,6 @@ const Cart = () => {
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-
                 <div className="ml-4 flex flex-1 flex-col">
                   <div className="flex justify-between text-base font-medium text-gray-900">
                     <h3>
@@ -152,7 +143,6 @@ const Cart = () => {
                   <p className="mt-1 text-sm text-gray-500">
                     {item.productId.brandName}
                   </p>
-
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <div className="text-gray-500">
                       <button

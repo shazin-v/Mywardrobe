@@ -9,7 +9,6 @@ async function addToCartController(req, res) {
       productId,
       userId: currentUser,
     });
-    console.log("isProductAvailable   ", isProductAvailable);
 
     if (isProductAvailable) {
       return res.json({

@@ -29,7 +29,6 @@ const AllUsers = () => {
     <>
       <div className="p-4">
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-          {/* <button className="bg-red-200">Add product</button> */}
           {/* table */}
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -38,18 +37,12 @@ const AllUsers = () => {
                   <th scope="col" className="px-6 py-3">
                     Sl.No
                   </th>
-                  {/* <th scope="col" className="px-6 py-3">
-                    Name
-                  </th> */}
                   <th scope="col" className="px-6 py-3">
                     Email
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Role
                   </th>
-                  {/* <th scope="col" className="px-6 py-3">
-                    Action
-                  </th> */}
                 </tr>
               </thead>
               <tbody>
@@ -62,25 +55,14 @@ const AllUsers = () => {
                       >
                         {index + 1}{" "}
                       </th>
-                      {/* <td className="px-6 py-4">{el?.name}</td> */}
                       <td className="px-6 py-4">{el?.email}</td>
                       <td className="px-6 py-4">{el?.role}</td>
-                      {/* <td className="px-6 py-4 text-right">
-                        <a
-                          href="#"
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >
-                          Edit
-                        </a>
-                      </td> */}
                     </tr>
                   );
                 })}
               </tbody>
             </table>
           </div>
-
-          {/* table end */}
         </div>
       </div>
     </>

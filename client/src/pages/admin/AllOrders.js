@@ -15,7 +15,6 @@ const AllOrders = () => {
     const responseData = await response.json();
 
     setData(responseData.data);
-    console.log("order list", responseData);
   };
 
   useEffect(() => {
@@ -25,7 +24,6 @@ const AllOrders = () => {
   return (
     <div className="h-[calc(100vh-190px)] overflow-y-scroll">
       {!data[0] && <p>No Order available</p>}
-
       <div className="p-4 w-full">
         {data.map((item, index) => {
           return (
@@ -44,6 +42,7 @@ const AllOrders = () => {
                         >
                           <img
                             src={product.image[0]}
+                            alt="product"
                             className="w-28 h-28 bg-slate-200 object-scale-down p-2"
                           />
                           <div>
@@ -61,13 +60,13 @@ const AllOrders = () => {
                       );
                     })}
                   </div>
-                  <div className="flex flex-col gap-4 p-2 min-w-[300px]">
+                  {/* <div className="flex flex-col gap-4 p-2 min-w-[300px]">
                     <div>
                       <div className="text-lg font-medium">
-                        Payment Details :{" "}
+                        Payment Details :
                       </div>
                       <p className=" ml-1">
-                        Payment method :{" "}
+                        Payment method :
                         {item.paymentDetails.payment_method_type[0]}
                       </p>
                       <p className=" ml-1">
@@ -86,7 +85,7 @@ const AllOrders = () => {
                         );
                       })}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="font-semibold ml-auto w-fit lg:text-lg">

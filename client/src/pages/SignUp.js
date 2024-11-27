@@ -41,16 +41,13 @@ const SignUp = () => {
 
       if (dataApi.success) {
         toast.success(dataApi.message);
-        alert(dataApi.message);
         navigate("/login");
       }
 
       if (dataApi.error) {
-        alert(dataApi.message);
         toast.error(dataApi.message);
       }
     } catch (error) {
-      alert("Please check password and confirm password", error);
       toast.error("Please check password and confirm password");
     }
   };

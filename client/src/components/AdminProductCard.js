@@ -12,6 +12,7 @@ const AdminProductCard = ({ data, fetchdata }) => {
         <div className="w-32 h-32 flex justify-center items-center">
           <img
             src={data?.productImage[0]}
+            alt={data?.productName || "Product Image"}
             className="mx-auto object-fill h-full"
           />
         </div>
@@ -21,7 +22,6 @@ const AdminProductCard = ({ data, fetchdata }) => {
           <p className="font-semibold">
             {displayINRCurrency(data.sellingPrice)}
           </p>
-
           <div
             className="w-fit ml-auto p-2 bg-green-100 hover:bg-green-600 rounded-full hover:text-white cursor-pointer"
             onClick={() => setEditProduct(true)}
@@ -30,7 +30,6 @@ const AdminProductCard = ({ data, fetchdata }) => {
           </div>
         </div>
       </div>
-
       {editProduct && (
         <AdminEditProduct
           productData={data}

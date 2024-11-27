@@ -31,7 +31,7 @@ const Login = () => {
 
     const dataResponse = await fetch(SummaryApi.signIn.url, {
       method: SummaryApi.signIn.method,
-      credentials:'include',
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -42,18 +42,15 @@ const Login = () => {
 
     if (dataApi.success) {
       toast.success(dataApi.message);
-      // alert(dataApi.message);
       navigate("/");
       fetchUserDetails();
       fetchUserAddToCart();
     }
-    
+
     if (dataApi.error) {
-      // alert(dataApi.message);
       toast.error(dataApi.message);
     }
   };
-  console.log("data login", data);
 
   return (
     <>

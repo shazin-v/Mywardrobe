@@ -9,7 +9,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUserDetails: (state, action) => {
-      state.user = action.payload; // Default to null if payload is invalid
+      state.user = action.payload;
     },
   },
 });
@@ -17,4 +17,3 @@ export const userSlice = createSlice({
 export const { setUserDetails } = userSlice.actions;
 
 export default userSlice.reducer;
-

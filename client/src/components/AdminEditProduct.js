@@ -59,9 +59,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
     });
   };
 
-  {
-    /**upload product */
-  }
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -115,7 +112,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
             className="p-2 bg-slate-100 border rounded"
             required
           />
-
           <label htmlFor="brandName" className="mt-3">
             Brand Name :
           </label>
@@ -129,7 +125,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
             className="p-2 bg-slate-100 border rounded"
             required
           />
-
           <label htmlFor="category" className="mt-3">
             Category :
           </label>
@@ -149,7 +144,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
               );
             })}
           </select>
-
           <label htmlFor="productImage" className="mt-3">
             Product Image :
           </label>
@@ -186,7 +180,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
                           setFullScreenImage(el);
                         }}
                       />
-
                       <div
                         className="absolute bottom-0 right-0 p-1 text-white bg-red-600 rounded-full hidden group-hover:block cursor-pointer"
                         onClick={() => handleDeleteProductImage(index)}
@@ -203,7 +196,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
               </p>
             )}
           </div>
-
           <label htmlFor="price" className="mt-3">
             Price :
           </label>
@@ -217,7 +209,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
             className="p-2 bg-slate-100 border rounded"
             required
           />
-
           <label htmlFor="sellingPrice" className="mt-3">
             Selling Price :
           </label>
@@ -231,7 +222,6 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
             className="p-2 bg-slate-100 border rounded"
             required
           />
-
           <label htmlFor="description" className="mt-3">
             Description :
           </label>
@@ -243,13 +233,11 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
             name="description"
             value={data.description}
           ></textarea>
-
           <button className="px-3 py-2 bg-red-600 text-white mb-10 hover:bg-red-700">
             Update Product
           </button>
         </form>
       </div>
-
       {/***display image full screen */}
       {openFullScreenImage && (
         <DisplayImage

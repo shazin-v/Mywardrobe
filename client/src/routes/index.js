@@ -17,26 +17,11 @@ import AllUsers from "../pages/admin/AllUsers";
 import AllOrders from "../pages/admin/AllOrders";
 import AllProduct from "../pages/admin/AllProduct";
 import OrderPage from "../pages/OrderPage";
-const Layout = () => (
-  <>
-    {/* <div className="bg-[#111827]"> */}
-    <div className="">
-      <Navbar />
-      <main className="flex-grow">
-        {" "}
-        {/* Content here */}
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
-  </>
-);
 
 const router = createBrowserRouter([
   {
     path: "/",
-    // element: <Layout />, // Layout wraps the Navbar and children
-    element: <App />, // Layout wraps the Navbar and children
+    element: <App />,
     children: [
       {
         path: "*",
@@ -47,19 +32,19 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "login", // No need to prefix with "/"
+        path: "login",
         element: <Login />,
       },
       {
-        path: "signup", // No need to prefix with "/"
+        path: "signup",
         element: <SignUp />,
       },
       {
-        path: "about", // No need to prefix with "/"
+        path: "about",
         element: <About />,
       },
       {
-        path: "contact", // No need to prefix with "/"
+        path: "contact",
         element: <Contact />,
       },
       {
