@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-
 const connectDB = require("./config/db");
 const router = require("./routes");
 
@@ -13,24 +12,24 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_IRL,
+    origin: process.env.FRONTEND_URL,
     credentials: true,
-  //   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add methods your frontend might use
-  //   allowedHeaders: ["Content-Type", "Authorization"], // Specify headers you might use
-  // origin: true,
-  //   credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add methods your frontend might use
+    allowedHeaders: ["Content-Type", "Authorization"], // Specify headers you might use
   })
 );
-app.use(cookieParser());
-app.use(express.json());
-
 
 // Handle preflight requests
-// app.options('*', cors({
-//   origin: 'http://localhost:3000',
-//   credentials: true,
-// }));
+app.options(
+  "*",
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 
+app.use(cookieParser());
+app.use(express.json());
 
 app.use(router);
 
