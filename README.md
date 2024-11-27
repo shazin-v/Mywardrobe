@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# MERN Stack E-Commerce Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack e-commerce application built with the MERN stack: **MongoDB**, **Express.js**, **React.js**, and **Node.js**.
 
-## Available Scripts
+The project consists of two main folders:
 
-In the project directory, you can run:
+- `client`: The front-end React application.
+- `server`: The back-end Node.js/Express application.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure you have the following installed on your machine:
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [MongoDB](https://www.mongodb.com/) (local or cloud-based, e.g., MongoDB Atlas)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+# Installation and Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Set Up Environment Variables
 
-### `npm run eject`
+Both the client and server folders require .env files. Ensure the following variables are configured:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Front-End .env (inside client folder)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+REACT_APP_API_URL=http://localhost:5000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Back-End .env (inside server folder)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+---
 
-## Learn More
+# Run the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Start the Front-End
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Navigate to the client folder and run:
 
-### Code Splitting
+```bash
+cd client
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This starts the React app on http://localhost:3000.
 
-### Analyzing the Bundle Size
+### Start the Back-End
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Navigate to the server folder and run:
 
-### Making a Progressive Web App
+```bash
+npm install
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This starts the Node.js server on http://localhost:5000.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Usage
 
-### Deployment
+Open your browser and go to http://localhost:3000 for the front-end.
+The front-end will interact with the back-end APIs running on http://localhost:5000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+# Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Front-End:
+
+- Responsive UI built with React and Tailwind CSS.
+- User authentication and secure routes.
+- Product catalog with filtering and searching.
+- Shopping cart and order management.
+
+### Back-End:
+
+- RESTful API with Node.js and Express.
+- MongoDB database for data persistence.
+- JWT-based authentication.
+- API routes for products, orders, and users.
+
+# TODO:
+- Implement payment gateway integration.
+- Integrate searching features
+- Impliment category search
+- Implement user profile management
+
