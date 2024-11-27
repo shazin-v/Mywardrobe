@@ -1,4 +1,4 @@
-const backendDomain = "http://localhost:4006";
+const backendDomain = process.env.REACT_APP_BACKEND_DOMAIN;
 
 const SummaryApi = {
   signUp: {
@@ -56,7 +56,6 @@ const SummaryApi = {
     method: "post",
   },
 
-
   updateProduct: {
     url: `${backendDomain}/update-product`,
     method: "post",
@@ -80,14 +79,10 @@ const SummaryApi = {
     method: "get",
   },
 
-
-
-
   allOrder: {
     url: `${backendDomain}/all-order`,
     method: "get",
   },
-
 };
 
 export default SummaryApi;
