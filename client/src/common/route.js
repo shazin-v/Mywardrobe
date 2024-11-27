@@ -1,4 +1,6 @@
 const backendDomain = process.env.REACT_APP_BACKEND_DOMAIN;
+console.log(backendDomain); // Logs the value of REACT_APP_BACKEND_DOMAIN or the default
+
 
 const SummaryApi = {
   signUp: {
