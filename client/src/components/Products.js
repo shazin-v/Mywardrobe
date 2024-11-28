@@ -24,6 +24,7 @@ import Pagination from "./Pagination";
 import { useNavigate } from "react-router-dom";
 import { filters, sortOptions } from "../helpers/productFilter";
 import SummaryApi from "../common/route";
+import displayINRCurrency from "../helpers/displayCurrency";
 
 const Products = () => {
   function classNames(...classes) {
@@ -285,9 +286,9 @@ const Products = () => {
                   {/* product */}
                   <div className="bg-white">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                      <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                      {/* <h2 className="text-2xl font-bold tracking-tight text-gray-900">
                         Customers also purchased
-                      </h2>
+                      </h2> */}
 
                       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {allProduct?.map((product) => (
@@ -317,7 +318,7 @@ const Products = () => {
                                 </p>
                               </div>
                               <p className="text-sm font-medium text-gray-900">
-                                {product.price}
+                              {displayINRCurrency(product.price)}
                               </p>
                             </div>
                           </div>

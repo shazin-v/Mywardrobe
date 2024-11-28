@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import SummaryApi from "../common/route";
 import Context from "../context";
 import addToCart from "../helpers/addToCart";
+import displayINRCurrency from "../helpers/displayCurrency";
 
 const ProductDetails = () => {
   const [selectedColor, setSelectedColor] = useState(null);
@@ -126,10 +127,10 @@ const ProductDetails = () => {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="">Product information</h2>
             <p className="text-3xl tracking-tight text-gray-900">
-              ${data?.price}
+            {displayINRCurrency(data?.price)}
             </p>
             <p className="text-lg text-gray-500 line-through">
-              ${data?.sellingPrice}
+            {displayINRCurrency(data?.sellingPrice)}
             </p>
 
             {/* COLOR */}
