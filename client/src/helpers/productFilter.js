@@ -15,13 +15,18 @@ export const filters = [
     id: "category",
     name: "Category",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      { value: "T-Shirt", label: "T-Shirt", checked: false },
+      { value: "Shirt", label: "Shirt", checked: false },
+      { value: "Jeans", label: "Jeans", checked: false },
+      { value: "Jackets", label: "Jackets", checked: false },
+      { value: "Sweaters", label: "Sweaters", checked: false },
+      { value: "Shorts", label: "Shorts", checked: false },
+      { value: "Skirts", label: "Skirts", checked: false },
+      { value: "Suits", label: "Suits", checked: false },
+      { value: "Dresses", label: "Dresses", checked: false },
     ],
   },
+
   // {
   //   id: "size",
   //   name: "Size",

@@ -113,7 +113,11 @@ const ProductDetails = () => {
               )}
             </>
           ) : (
-            <p className="text-center text-gray-500">No images available</p>
+            <>
+              <div className="flex justify-center items-center h-[calc(100vh-120px)]">
+                <h1 className="text-2xl">Loading.....</h1>
+              </div>
+            </>
           )}
         </div>
 
@@ -127,10 +131,10 @@ const ProductDetails = () => {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="">Product information</h2>
             <p className="text-3xl tracking-tight text-gray-900">
-            {displayINRCurrency(data?.price)}
+              {displayINRCurrency(data?.price)}
             </p>
             <p className="text-lg text-gray-500 line-through">
-            {displayINRCurrency(data?.sellingPrice)}
+              {displayINRCurrency(data?.sellingPrice)}
             </p>
 
             {/* COLOR */}

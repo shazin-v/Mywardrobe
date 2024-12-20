@@ -35,6 +35,8 @@ const Products = () => {
   const navigate = useNavigate();
 
   const [allProduct, setAllProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const fetchAllProduct = async () => {
     const response = await fetch(SummaryApi.allProduct.url);
     const dataResposne = await response.json();
@@ -44,6 +46,7 @@ const Products = () => {
 
   useEffect(() => {
     fetchAllProduct();
+    setLoading(false);
   }, []);
   return (
     <>
@@ -148,10 +151,10 @@ const Products = () => {
           </Dialog>
 
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+            <div className="flex items-baseline justify-end border-b border-gray-200 pb-6 pt-6">
+              {/* <h1 className="text-4xl font-bold tracking-tight text-gray-900">
                 New Arrivals
-              </h1>
+              </h1> */}
 
               <div className="flex items-center">
                 <Menu as="div" className="relative inline-block text-left">
@@ -189,13 +192,13 @@ const Products = () => {
                   </MenuItems>
                 </Menu>
 
-                <button
+                {/* <button
                   type="button"
                   className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
                 >
                   <span className="sr-only">View grid</span>
                   <Squares2X2Icon aria-hidden="true" className="size-5" />
-                </button>
+                </button> */}
                 <button
                   type="button"
                   onClick={() => setMobileFiltersOpen(true)}
@@ -285,6 +288,13 @@ const Products = () => {
 
                   {/* product */}
                   <div className="bg-white">
+                    {loading && (
+                      <>
+                        <div className="flex justify-center items-center h-[calc(100vh-120px)]">
+                          <h1 className="text-2xl">Loading.....</h1>
+                        </div>
+                      </>
+                    )}
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                       {/* <h2 className="text-2xl font-bold tracking-tight text-gray-900">
                         Customers also purchased
@@ -318,14 +328,14 @@ const Products = () => {
                                 </p>
                               </div>
                               <p className="text-sm font-medium text-gray-900">
-                              {displayINRCurrency(product.price)}
+                                {displayINRCurrency(product.price)}
                               </p>
                             </div>
                           </div>
                         ))}
                       </div>
                     </div>
-                    <Pagination />
+                    {/* <Pagination /> */}
                   </div>
                   {/* product end */}
                 </div>
